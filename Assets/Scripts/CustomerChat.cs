@@ -1,43 +1,3 @@
-/*
-using UnityEngine;
-
-public class CustomerChat : MonoBehaviour
-{
-    public GameObject chatboxPrefab;  // Prefab for the empty chatbox
-    public Transform chatboxPosition;  // Position above the customer's head where the chatbox should appear
-    private GameObject activeChatbox;  // Store the active chatbox
-
-    void Start()
-    {
-        // Spawn the chatbox when the customer needs to request food
-        SpawnChatbox();
-    }
-
-    // Method to spawn the chatbox
-    void SpawnChatbox()
-    {
-        // Instantiate the empty chatbox at the chatboxPosition
-        activeChatbox = Instantiate(chatboxPrefab, chatboxPosition.position, Quaternion.identity);
-
-        // Set it as a child of the chatboxPosition so it stays in the correct position
-        activeChatbox.transform.SetParent(chatboxPosition);
-
-        // Adjust the local position and scale if needed
-        activeChatbox.transform.localPosition = Vector3.zero;
-        activeChatbox.transform.localScale = Vector3.one;  // Adjust scale if necessary
-    }
-
-    // Method to remove the chatbox when the player delivers food
-    public void RemoveChatbox()
-    {
-        if (activeChatbox != null)
-        {
-            Destroy(activeChatbox);
-        }
-    }
-}
-*/
-
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -88,6 +48,7 @@ public class CustomerChat : MonoBehaviour
         if (activeChatbox != null)
         {
             Destroy(activeChatbox);
+            Destroy(displayedFood);
         }
     }
 
